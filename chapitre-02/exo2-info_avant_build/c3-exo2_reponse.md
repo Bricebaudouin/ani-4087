@@ -31,4 +31,4 @@ Daemon
 Status: Not running
 
 
-cette sortie me renseigne sur: l'environnement, la famille, le nom ainsi que les systèmes d'exploitation de la toolchains disponible
+Remarque:cette sortie me renseigne sur: l'environnement, la famille, le nom ainsi que les systèmes d'exploitation de la toolchains disponible
