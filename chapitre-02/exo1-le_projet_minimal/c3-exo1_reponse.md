@@ -1,5 +1,6 @@
+voici ma sortie de jenga build: je suis obligé de préciser ma toolchain car mon clang n'arrive pas à détecté automatiquement mingw.
 
-PS C:\Users\Brice Baudouin\OneDrive\Bureau\JENGA\jenga> jenga run
+PS C:\Users\Brice Baudouin\OneDrive\Bureau\JENGA\jenga> jenga build --toolchain mingw
 
 ╔══════════════════════════════════════════════════════════════════╗
 ║                                                                  ║
@@ -14,14 +15,33 @@ PS C:\Users\Brice Baudouin\OneDrive\Bureau\JENGA\jenga> jenga run
 ║                                                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
+Loading workspace...
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ▶  EXECUTION  —  Test.exe
-     C:\Users\Brice Baudouin\OneDrive\Bureau\JENGA\JENGA\Build\Bin\Debug-Windows\Test\Test.exe
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Configuration: Debug
+Target:        Windows x86_64
+Toolchain:     mingw
 
-0
+Build Order (1 projects):
+  1. Test [WINDOWED_APP]
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ◀  FIN D'EXECUTION  —  termine normalement  (0.12s)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+╔══════════════════════════════════════════════════════════════════════════════════════════════╗
+║  Project: Test                                                           Kind: WINDOWED_APP  ║
+╚══════════════════════════════════════════════════════════════════════════════════════════════╝
+
+ℹ Found 1 source file(s)
+✓   [1/1] Compiled: main.cpp
+ℹ Linking...
+✓ Built: Build\Bin\Debug-Windows\Test\Test.exe
+
+┌──────────────────────────────────────────────────────────────────────────────────────────────┐
+│  ✓ Build Successful                                                             Time: 0.92s  │
+└──────────────────────────────────────────────────────────────────────────────────────────────┘
+
+════════════════════════════════════════════════════════════════════════════════
+                                BUILD COMPLETED                                 
+════════════════════════════════════════════════════════════════════════════════
+Projects Built:  1/1
+Time:           0.93s
+Status:         ✓ SUCCESS
+════════════════════════════════════════════════════════════════════════════════
