@@ -75,3 +75,22 @@ Projects Built:  1/1
 Time:           0.93s
 Status:         ✓ SUCCESS
 ════════════════════════════════════════════════════════════════════════════════
+
+
+
+
+
+LE CONTENU DE MON FICHIER .JENGA EST LE SUIVANT: 
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+# Test - Jenga Project (inclus dans le workspace via include())
+
+from Jenga import *
+
+with project("Test"):
+    windowedapp()
+    language("C++")
+    cppdialect("C++17")
+    location(".")
+    files(["src/**.cpp", "include/**.hpp"])
