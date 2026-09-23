@@ -1,1 +1,1 @@
-
+en construisant le projet en debug et en release, les deux exécutables ont la même taille soit 135ko par contre me temps de construction en Debug est plus grand que celui en Release soit respectivement 0.98s pour le temps de construction en Debug et 0.71s pour le temps de construction en release
