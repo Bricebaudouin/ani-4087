@@ -31,4 +31,4 @@ Daemon
 Status: Not running
 
 
-Remarque:cette sortie me renseigne sur: l'environnement, la famille, le nom ainsi que les systèmes d'exploitation de la toolchains disponible
+Remarque: dans .jenga on précise la version du c++ utilisée qui est C++17 la localisation du projet qui est dans le fichier source tandis que jenga info présice les toolchains disponible, test pour dire s'il s'agit des test unitaire(non) external, ainsi que les daemon. chose que le .jenga ne renseigne pas.
