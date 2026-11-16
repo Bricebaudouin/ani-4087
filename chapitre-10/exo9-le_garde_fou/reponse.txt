@@ -1,9 +1,23 @@
-Ce qui change
+**Le chemin fautif**
 
-Seule la table de correspondance est modifiée. Mon programme lit sur l’entrée une liste de lignes « USAGE COMMANDE » et les range dans une table usage -> commande (la variable table, dans JouerUneTable). La seconde table remplace SOURIS_G par ESPACE et SOURIS_D par E. Le reste du programme est inchangé, donc la sortie est identique (IDENTIQUES OUI).
+Le chemin fautif est celui du signe C : les vues échouent et la boucle exécute `continue`. Ce `continue` saute l'appel à `End` écrit en bas du corps de boucle, alors que `Begin` a déjà ouvert la trame. À l'image 3 de NNCNVRN, la trame reste donc ouverte.
 
-Sur un vrai casque, cette partie serait remplacée par la traduction que fait le backend entre l’usage et les boutons du matériel branché. La déclaration des actions, la détection de l’appui et l’affichage resteraient exactement les mêmes.
+À l'image 4, la session refuse `Wait`, puis `Begin` : deux refus. Comme `Wait` est refusé, la boucle n'a pas d'état et l'image 4, qui devait être rendue (N), devient V : elle est perdue.
 
-Aucun nom de bouton dans le code
+Sans garde, ma sortie est : `SANS DEBUTS 5 FINS 4 REFUS 2 IMAGES 2 OUVERTE OUI`. Il y a bien 2 refus et seulement 2 images rendues (les images 1 et 2). Le `End` du bas de l'image 4, qui passe par le chemin V, ferme la trame par hasard et permet de repartir.
 
-Mon programme ne contient aucun nom de bouton ni de touche. Une commande n’est utilisée qu’à un seul endroit
+**Pourquoi le destructeur**
+
+Le destructeur d'un objet local s'exécute à chaque sortie de sa portée : fin du corps de boucle, `continue`, `return`. `GardeTrame` est créée juste après `Begin` et appelle `End` dans son destructeur. Je l'écris une seule fois, et plus aucun chemin ne peut oublier de fermer la trame. Il n'y a plus de `End` à placer chaque fois qu'on ajoute une sortie.
+
+Avec la garde, ma sortie est : `AVEC DEBUTS 6 FINS 6 REFUS 0 IMAGES 3 OUVERTE NON`. Chaque début a sa fin, il n'y a aucun refus, et l'image 4 est rendue, puisque la trame de l'image 3 a été fermée.
+
+La classe n'a ni constructeur de copie ni opérateur d'affectation (les deux sont supprimés). Une copie fermerait la trame deux fois, et la seconde fin serait refusée.
+
+**Le return**
+
+Le signe R fait un `return` à l'image 6 et la boucle s'arrête : l'image 7 n'est jamais jouée, dans les deux versions.
+
+Sans garde, le `return` saute `End` : j'ai 5 débuts pour 4 fins, et la trame reste ouverte (`OUVERTE OUI`). Le programme ne pourrait plus avancer, car toute attente suivante serait refusée.
+
+Avec la garde, le `return` déclenche le destructeur, qui appelle `End` : 6 débuts, 6 fins, `OUVERTE NON`. C'est le même `return` dans les deux boucles, et seule la garde ferme la trame.
