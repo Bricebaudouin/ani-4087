@@ -1,1 +1,9 @@
+Ce qui change
 
+Seule la table de correspondance est modifiée. Mon programme lit sur l’entrée une liste de lignes « USAGE COMMANDE » et les range dans une table usage -> commande (la variable table, dans JouerUneTable). La seconde table remplace SOURIS_G par ESPACE et SOURIS_D par E. Le reste du programme est inchangé, donc la sortie est identique (IDENTIQUES OUI).
+
+Sur un vrai casque, cette partie serait remplacée par la traduction que fait le backend entre l’usage et les boutons du matériel branché. La déclaration des actions, la détection de l’appui et l’affichage resteraient exactement les mêmes.
+
+Aucun nom de bouton dans le code
+
+Mon programme ne contient aucun nom de bouton ni de touche. Une commande n’est utilisée qu’à un seul endroit
